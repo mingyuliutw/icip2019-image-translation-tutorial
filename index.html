@@ -1,0 +1,228 @@
+<html>
+
+<head>
+    <style type="text/css">
+        a {
+            color: #1772d1;
+            text-decoration: none;
+        }
+
+        a:focus,
+        a:hover {
+            color: #f09227;
+            text-decoration: none;
+        }
+
+        body,
+        td,
+        th {
+            font-family: 'Lato', Verdana, Helvetica, sans-serif;
+            font-size: 18px;
+            color: #000000;
+        }
+
+        tr {
+            padding: 20px;
+            text-align: center;
+        }
+
+        strong {
+            font-family: 'Lato', Verdana, Helvetica, sans-serif;
+            font-size: 14px
+        }
+
+        heading {
+            font-family: 'Lato', Verdana, Helvetica, sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .section {
+            width: 60%;
+            min-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 1em 1em 1em 1em;
+            background: #F5F5F5;
+        }
+
+        .section_header {
+            font-size: 24px;
+            font-weight: 700;
+            color: #76b900;
+        }
+
+        .table_header {
+            background-color: #76b900;
+            color: white;
+        }
+
+        hr {
+            border: 1px solid black;
+            margin: 0.2%;
+        }
+
+        .lightgreen {
+            background-color: #e6f3d1;
+        }
+
+        .mildgreen {
+            background-color: #75b90077;
+        }
+
+        table {
+            margin-top: 2%;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        table td {
+            border: 1px solid black;
+            padding: 1%;
+            font-size: 16px;
+        }
+
+        table tr:first-child td {
+            border-top: 0;
+        }
+
+        table tr td:first-child {
+            border-left: 0;
+        }
+
+        table tr:last-child td {
+            border-bottom: 0;
+        }
+
+        table tr td:last-child {
+            border-right: 0;
+        }
+
+        mark {
+            background-color: rgba(21, 255, 0, 0.61);
+            color: black;
+        }
+    </style>
+    <link href='//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet'
+        type='text/css'>
+    <title>Tutorial on Image-to-Image Translation</title>
+    <link rel="shortcut icon" href="favicon.ico">
+</head>
+
+<body>
+    <p align="center" style="padding-top: 3%">
+        <font size="5">ICIP 2019 Tutorial on</font></br>
+        <font size="6">Image-to-Image Translation</font></br></br>
+        <b>Presenters:</b></br>
+        <a href="http://mingyuliu.net" target="_blank">Ming-Yu Liu</a>, 
+        <a href="https://tcwang0509.github.io/" target="_blank">Ting-Chun Wang</a>
+        </br></br>
+        <b>Time and Location:</b></br>
+        Sunday, Sep 22, Half Day AM
+        </br></br>
+    </p>
+
+
+    <div class="section">
+        <div class="section_header">Overview</div>
+        <p style="text-align: left;">
+            Image-to  -Image TranslationImage-to -image  translation  refers  to  the  problem  of  generating  a  new  image  based  on  an  input  image. Many tasks in image processing can be formulated as an image-to -image translation problem, including  image  super-resolution,  image  inpainting,  and  style  transfer.  
+            </br>
+        </p>
+
+        <p style="text-align: left;">
+            In  this  short  course,  we  will  cover both of the basics and applications of image-to -image translation.  We will start the course by reviewing the generative adversarial network (GAN) framework proposed by  Goodfellow  et.  al.,  which  is  a  popular  generative  model  and  is  the  backbone  model  of  various  state-of  -the-art   image-to -image   translation   methods   thanks   to   its   extraordinary   capability   in   generating  crispy  sharp  images.  Various  variants  of  GANs  exist.  We  will  cover  several  popular  ones.  We will also cover their conditional extensions.  
+            </br>
+        </p>
+        <p style="text-align: left;">        
+            Next,  we  will  give  a  formal  definition  of  the  image-to -image  translation  problem.  We  will  unify  thenotation  and  categorize  existing  works  based  on  their  learning  settings,  including  the  supervised  setting (input--output relationship is observed), the unsupervised setting  (input--output relationship is  not  observed),  the  semi-supervised  setting,  the  multimodal  setting,  and  the  few-shot  setting.  We  will discuss details of the representative works in each setting. We will cover their network designs, objective functions, training strategy, and limitations. Applications to various image processing tasks will be discussed.
+            </br>
+        </p>
+
+        <p style="text-align: left;">        
+            We  will  then  move  to  the  video-to -video  translation  problem,  which  is  a  natural  extension  of  the  image-to -image  translation  problem.  We  will  discuss  techniques  for  generating  convincing  visual  dynamics  as  well  as  techniques  for  ensuring  temporal  consistency.  We  will  then  present  an  integration of an existing 3D rendering engine and a video-to -video translation model for creating a new form of computer graphics. We will talk about its strength and weakness as a graphic rendering engine.
+            </br>
+        </p>
+
+        <p style="text-align: left;">        
+            Finally,  we  will  conclude  the  course  by  discussing  the  conditions  needed  for  image-to -image translation to work. We will talk about practical methods for meeting the conditions, including how to  collect  training  data  and  troubleshooting  tips.  We  will  outline  the  remaining  challenges  and  potential    research    problems.  
+            </br>
+        </p>
+
+
+    </div>
+    </br>
+
+
+    <div class="section">
+        <div class="section_header">Schedule</div>
+        <table align="center">
+            <tbody>
+                <tr class="table_header">
+                    <td><b>Time</b></td>
+                    <td><b>Title</b></td>
+                    <td><b>Speaker</b></td>
+                    <td><b>Affil.</b></td>
+                </tr>
+                <tr>
+                    <td>09:00 - 09:05</td>
+                    <td>Welcome</td>
+                    <td><a href="http://mingyuliu.net" target="_blank">Ming-Yu Liu</a></td>
+                    <td>NVIDIA</td>
+                </tr>
+                <tr class="lightgreen">
+                    <td>09:05 - 09:30</td>
+                    <td><a href="pdfs/part1_gan.pdf">A short tutorial on GANs</a></td>
+                    <td><a href="https://tcwang0509.github.io/" target="_blank">Ting-Chun Wang</a></td>
+                    <td>NVIDIA</td>
+                </tr>
+                <tr>
+                    <td>09:30 - 10:00</td>
+                    <td><a href="pdfs/part2_pix2pixHD.pdf">Supervised Image-to-Image Translation Part 1</a></td>
+                    <td><a href="https://tcwang0509.github.io/" target="_blank">Ting-Chun Wang</a></td>
+                    <td>NVIDIA</td>
+                </tr>
+                <tr class="lightgreen">
+                    <td>10:00 - 10:30</td>
+                    <td><a href="pdfs/part3_spade.pdf">Supervised Image-to-Image Translation Part 2</a></td>
+                    <td><a href="http://mingyuliu.net" target="_blank">Ming-Yu Liu</a></td>
+                    <td>NVIDIA</td>
+                </tr>                
+                <tr>
+                    <td>10:30 - 11:00</td>
+                    <td>Coffee Break</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr class="lightgreen">
+                    <td>11:00 - 11:20</td>
+                    <td><a href="pdfs/part4_munit.pdf">Unsupervised Image-to-Image Translation</a></td>
+                    <td><a href="http://mingyuliu.net" target="_blank">Ming-Yu Liu</a></td>
+                    <td>NVIDIA</td>
+                </tr>
+                <tr>
+                    <td>11:20 - 11:40</td>
+                    <td><a href="pdfs/part5_funit.pdf">Few-shot Unsupervised Image-to-Image Translation</a></td>
+                    <td><a href="http://mingyuliu.net" target="_blank">Ming-Yu Liu</a></td>        
+                    <td>NVIDIA</td>
+                </tr>                
+                <tr class="lightgreen">
+                    <td>11:20 - 11:40</td>
+                    <td><a href="pdfs/part6_vid2vid.pdf">Video-to-Video Translation</a></td>
+                    <td><a href="https://tcwang0509.github.io/" target="_blank">Ting-Chun Wang</a></td>
+                    <td>NVIDIA</td>
+                </tr>
+                <tr>
+                    <td>11:20 - 11:40</td>
+                    <td><a href="pdfs/part7_ada-vid2vid.pdf">Few-Shot Adaptive Video-to-Video Translation</a></td>
+                    <td><a href="https://tcwang0509.github.io/" target="_blank">Ting-Chun Wang</a></td>
+                    <td>NVIDIA</td>
+                </tr>    
+            </tbody>
+        </table>
+    </div>
+    </br>
+    </br></br></br></br></br></br></br></br>
+</body>
+
+</html>
